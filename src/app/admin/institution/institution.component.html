@@ -1,0 +1,33 @@
+
+
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">INSTITUTION</h5>
+          <div class="card">
+            <div class="card-body">
+              <form (ngSubmit)="submit()">
+  
+                <div class="mb-3">
+                  <label for="exampleInputinstitutionname" class="form-label">Institution Name</label>
+                  <input type="text" name="institutionname" [(ngModel)]="institution.institutionname" id="form2Example1"
+                    class="form-control" placeholder="institution" />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputbiolink" class="form-label">Institution link</label>
+                    <input type="text" name="institutionlink" [(ngModel)]="institution.institutionlink" id="form2Example1"
+                      class="form-control" placeholder="biolink" />
+                  </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

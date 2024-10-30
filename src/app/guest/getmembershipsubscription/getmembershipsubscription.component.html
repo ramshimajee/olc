@@ -1,0 +1,162 @@
+<link href="/assets/guest/style.css" rel="stylesheet">
+<style>
+    /* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Row layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Column layout */
+.col-lg-3, .col-md-6 {
+    padding: 15px;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    max-width: 280px;
+}
+
+/* Pricing Item styling */
+.pricing-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pricing-item:hover {
+    transform: scale(1.05);
+}
+
+/* Price styling */
+.pi-price h3 {
+    font-size: 1.8em;
+    color: black;
+    margin: 10px 0;
+}
+
+.pi-price span {
+    display: block;
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Title styling */
+.pi-title h4 {
+    font-size: 1.3em;
+    color: #444;
+    margin-top: 15px;
+}
+
+/* Description styling */
+p {
+    font-size: 1em;
+    color: #555;
+    margin: 15px 0 20px;
+}
+
+/* Button styling */
+.primary-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+</style>
+ <!-- Page Header Start -->
+ <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-2.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Membership subscription</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page"> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Team End -->
+
+<!-- Pricing Section Begin -->
+<section class="pricing-section spad">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+            <h2>Our Membership Plans</h2>
+            <p>Select a plan that meets your needs and budget.</p>
+        </div><br><br>
+
+        <!-- Pricing Cards -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6" *ngFor="let data of membershipsubscription">
+                <div class="pricing-item">
+                    <!-- Price and Duration -->
+                    <div class="pi-price">
+                        <h3>₹{{data.price}}</h3>
+                        <span><strong>Duration:</strong> 
+                            {{data.duration == '6' ? '6 months' : data.duration == '1' ? '1 year' : data.duration == '2' ? '2 year': data.duration + ' months'}}
+                        </span>
+                    </div>
+                    
+                    <!-- Membership Type Title -->
+                    <div class="pi-title">
+                        <h4>{{data.membershiptype.membershiptypename}}</h4>
+                    </div>
+
+                    <!-- Description -->
+                    <p>{{data.description}}</p>
+                    
+                    <!-- Call to Action Button -->
+                    <div class="pi-text">
+                        <a (click)="subscribe(data.id)"   class="primary-btn">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Pricing Section End -->
+<!-- Pricing Section End -->
+
+

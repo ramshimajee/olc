@@ -1,0 +1,179 @@
+
+
+<!-- Service Section Start -->
+<div class="container-xxl service py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+            <h3 class="text-primary text-uppercase">Our Mission</h3>
+            <p class="text-secondary">With around 499 members from 98 countries worldwide, OLC’s work promotes a strong and united library profession, powering literate, informed, and participative societies.</p>
+            <p class="text-secondary">Becoming a member of OLC affirms your commitment to delivering exceptional library services and promoting the core values of library and information work.</p>
+            <h4 class="text-primary text-uppercase mt-4">Benefits of OLC Membership</h4>
+        </div>
+
+        <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-12">
+                <ul class="text-secondary list-unstyled">
+                    <li><i class="fas fa-check text-primary me-2"></i>Discounted rates for OLC events, including the Information Futures Summit</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Receive discounts on OLC Publications</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Save 10% on OLC vouchers as an institutional member</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Engage in dynamic professional development opportunities</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Be the first to hear the latest news via OLC member emails</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Participate in OLC Townhalls</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Influence the future by nominating and electing leaders</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Network with an international community of experts</li>
+                    <li><i class="fas fa-check text-primary me-2"></i>Strengthen the global voice of libraries and information services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service Section End -->
+ 
+
+<!-- Membership Section Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+            <h3 class="text-primary text-uppercase">Membership Registration</h3>
+            <p>Register for OLC membership to enjoy exclusive benefits and access to resources.</p>
+        </div>
+        <div class="row g-5">
+            <!-- Left Column: Terms and Conditions -->
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.2s">
+                <h4 class="mb-4 text-primary">Membership Terms & Conditions</h4>
+                <ul class="list-unstyled text-secondary">
+                    <li><i class="fas fa-check text-primary me-2"></i> Access to exclusive resources and events</li>
+                    <li><i class="fas fa-check text-primary me-2"></i> Regular updates on events and publications</li>
+                    <li><i class="fas fa-check text-primary me-2"></i> Member-only support and networking opportunities</li>
+                    <li><i class="fas fa-check text-primary me-2"></i> Compliance with community guidelines</li>
+                    <li><i class="fas fa-check text-primary me-2"></i> Non-refundable membership fee</li>
+                </ul>
+                <p class="mt-3">By registering, you agree to abide by these terms and our privacy policy.</p>
+            </div>
+
+            <!-- Right Column: Membership Form -->
+            <div class="col-lg-7">
+                <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    <form (ngSubmit)="submit()">
+                        <div class="row g-3">
+                            <!-- Display Name Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="displayname" [(ngModel)]="signup.displayname" id="displayname" class="form-control" placeholder="Display Name" />
+                                    <label for="displayname">Display Name</label>
+                                </div>
+                            </div>
+
+                            <!-- State Dropdown -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select name="stateid" [(ngModel)]="signup.stateid" class="form-control" (change)="DropdownChange($event)">
+                                        <option value="">-- Select State --</option>
+                                        <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
+                                    </select>
+                                    <label for="stateid">State</label>
+                                </div>
+                            </div>
+
+                            <!-- District Dropdown -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select name="districtid" [(ngModel)]="signup.districtid" class="form-control">
+                                        <option value="">-- Select District --</option>
+                                        <option *ngFor="let data of district" [value]="data.districtid">{{data.districtname}}</option>
+                                    </select>
+                                    <label for="districtid">District</label>
+                                </div>
+                            </div>
+
+                            <!-- First Name Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="firstname" [(ngModel)]="signup.firstname" id="firstname" class="form-control" placeholder="First Name" />
+                                    <label for="firstname">First Name</label>
+                                </div>
+                            </div>
+
+                            <!-- Last Name Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="lastname" [(ngModel)]="signup.lastname" id="lastname" class="form-control" placeholder="Last Name" />
+                                    <label for="lastname">Last Name</label>
+                                </div>
+                            </div>
+
+                            <!-- Affiliation Dropdown -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select name="affiliation" [(ngModel)]="signup.affiliation" class="form-control">
+                                        <option value="">-- Choose Affiliation --</option>
+                                        <option *ngFor="let data of affiliation" [value]="data.id">{{data.affiliatesname}}</option>
+                                    </select>
+                                    <label for="affiliation">Affiliation</label>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="LinkedIn" [(ngModel)]="signup.Linkedln" id="form2Exa" class="form-control" placeholder="" />
+                                    <label for="LinkedIn">LinkedIn </label>
+                                </div>
+                            </div>
+
+                            <!-- Biography Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea name="biography" [(ngModel)]="signup.biography" class="form-control" id="biography" placeholder="Biography"></textarea>
+                                    <label for="biography">Biography</label>
+                                </div>
+                            </div>
+
+                            <!-- ORCID Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="ORCID" [(ngModel)]="signup.ORCID" id="ORCID" class="form-control" placeholder="ORCID" />
+                                    <label for="ORCID">ORCID</label>
+                                </div>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" name="email" [(ngModel)]="signup.email" id="email" class="form-control" placeholder="Email" />
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" name="password" [(ngModel)]="signup.password" id="password" class="form-control" placeholder="Password" />
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms" name="agreeTerms" required />
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the <a href="#" target="_blank">terms and conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Complete Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+
+   

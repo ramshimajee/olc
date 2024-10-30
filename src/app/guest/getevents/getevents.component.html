@@ -1,0 +1,89 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-2.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Events</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Service Start -->
+<div class="container-xxl service py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h3 class="text-primary text-uppercase">Events Calendar</h3>
+           <p>
+                An events calendar showcases a variety of upcoming gatherings, including conferences, workshops, webinars, seminars, and exhibitions, aimed at sharing knowledge, skills, and networking opportunities.
+            </p>
+        </div><br>
+        <div class="row g-2 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-2">
+                <div class="nav w-100 nav-pills me-4">
+                    <button class="nav-link w-100 d-flex align-items-center text-start p-2 mb-2" 
+                            *ngFor="let data of eventsdata; let i = index" 
+                            [ngClass]="{'active': i === 0}" 
+                            data-bs-toggle="pill" 
+                            [attr.data-bs-target]="'#tab-pane-' + (i + 1)" 
+                            type="button"
+                            style="font-size: 0.9rem;">
+                        <h4 class="m-0" style="font-size: 1rem;">{{data.eventtype.eventtypename}}</h4>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="tab-content w-100">
+                    <div class="tab-pane fade" *ngFor="let data of eventsdata; let i = index" 
+                         [ngClass]="{'show active': i === 0}" 
+                         [attr.id]="'tab-pane-' + (i + 1)">
+                        <div class="col-md-12 p-4 border rounded shadow-sm" style="background-color: #f9f9f9;">
+                            <h3 class="mb-3">{{data.eventname}}</h3>
+                            <p class="mb-4">{{data.eventdescription}}</p>
+                            
+                            <!-- Event Details with Date and Location Styling -->
+                            <div class="event-details d-flex flex-wrap justify-content-between">
+                                <div class="d-flex flex-wrap">
+                                    <div class="me-4 mb-2 d-flex align-items-center" style="font-size: 1.1rem; color: #ff6347;">
+                                        <i class="fas fa-map"></i> <strong>{{data.state.statename}}</strong> <!-- State icon -->
+                                    </div>
+                                    <div class="me-4 mb-2 d-flex align-items-center" style="font-size: 1.1rem; color: #ff6347;">
+                                        <i class="fas fa-city"></i> <strong>{{data.district.districtname}}</strong> <!-- District icon -->
+                                    </div>
+                                    <div class="me-4 mb-2 d-flex align-items-center" style="font-size: 1.1rem; color: #ff6347;">
+                                        <i class="fas fa-location-arrow"></i> <strong>{{data.eventplace}}</strong> <!-- Location icon -->
+                                    </div>
+                                    <div class="me-4 mb-2 d-flex align-items-center" style="font-size: 1.1rem; color: #ff7f50;">
+                                        <i class="fas fa-calendar-alt me-2"></i> <strong>{{data.eventdate}}</strong> <!-- Date icon -->
+                                    </div>
+                                    <div class="me-4 mb-2 d-flex align-items-center" style="font-size: 1.1rem; color: #ff7f50;">
+                                        <i class="fas fa-clock me-2"></i> <strong>{{data.eventtime}}</strong> <!-- Time icon -->
+                                    </div>
+                                </div>
+                                <!-- Brochure Link on the right -->
+                                <a href="http://127.0.0.1:8000{{data.eventbrochure}}" class="btn btn-primary mt-3">View Brochure<i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+<!-- Additional Styling -->
+<style>
+    .event-details div i {
+        font-size: 1.2rem;
+    }
+</style>
+
+
+<!-- Service End -->

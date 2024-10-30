@@ -1,0 +1,63 @@
+
+
+<div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Board Members</h5>
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="submit()" enctype="multipart/form-data"> 
+
+              <div class="mb-3">
+                <label for="exampleInputFirstName" class="form-label">First Name</label>
+                <input type="text" name="firstname" [(ngModel)]="board.firstname"   id="form2Example1" class="form-control" placeholder="firstname" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputLastName" class="form-label">Last Name</label>
+                <input type="text" name="lastname" [(ngModel)]="board.lastname"   id="form2Example1" class="form-control" placeholder="lastname" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputdesignation" class="form-label">Designation</label>
+                <input type="text" name="designation" [(ngModel)]="board.designation"   id="form2Example1" class="form-control" placeholder="designation" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputaffliation" class="form-label">Affliation</label>
+                <input type="text" name="affliation" [(ngModel)]="board.affliation"   id="form2Example1" class="form-control" placeholder="affliation" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputDurationfrom" class="form-label">Duration from</label>
+                <input type="date" name="duration_from" [(ngModel)]="board.duration_from"   id="form2Example1" class="form-control" placeholder="durationfrom" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputDurationto" class="form-label">Duration to</label>
+                <input type="date" name="duration_to" [(ngModel)]="board.duration_to"   id="form2Example1" class="form-control" placeholder="durationto" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputtwitter" class="form-label">Twitter</label>
+                <input type="text" name="twitter" [(ngModel)]="board.twitter"   id="form2Example1" class="form-control" placeholder="twitter" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputORCID" class="form-label"> ORCID</label>
+                <input type="text" name="ORCID" [(ngModel)]="board.ORCID"   id="form2Example1" class="form-control" placeholder="ORCID" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputimage" class="form-label">Choose Image</label>
+                <input type="file" name="image" (change)="onFileSelected($event)"    id="form2Example1" class="form-control"  />
+              </div>
+              <img src="http://127.0.0.1:8000{{image}}" alt="image" width="100" height="100">
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

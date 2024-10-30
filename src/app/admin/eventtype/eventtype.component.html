@@ -1,0 +1,38 @@
+
+
+<div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Event type</h5>
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="submit()" enctype="multipart/form-data"> 
+
+              <div class="mb-3">
+                <label for="exampleInputeventtypename" class="form-label">Eventtype name</label>
+                <input type="text" name="eventtypename" [(ngModel)]="eventtype.eventtypename"   id="form2Example1" class="form-control" placeholder="" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventtypedescription" class="form-label">Eventtype description</label>
+                <input type="text" name="eventtypedescription" [(ngModel)]="eventtype.eventtypedescription"   id="form2Example1" class="form-control" placeholder="" />
+              </div>
+            
+             
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

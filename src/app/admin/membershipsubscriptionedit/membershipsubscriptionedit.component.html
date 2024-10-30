@@ -1,0 +1,48 @@
+
+
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Membership Subscription</h5>
+          <div class="card">
+            <div class="card-body">
+              <form (ngSubmit)="submit()">
+  
+                <div class="mb-3">
+                  <label for="examplestate" class="form-label">Membership type</label>
+                  <select name="text" id="" name="membershiptype" [(ngModel)]="membershipsubscription.membershiptype" class="form-control"
+                    placeholder="membershiptype">
+                    <option value="">-- Select membershiptype --</option>
+                    <option *ngFor="let data of membershiptype" [value]="data.id">{{data.membershiptypename}}</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputduration" class="form-label">Duration</label>
+                  <input type="text" name="duration" [(ngModel)]="membershipsubscription.duration" id="form2Example1"
+                    class="form-control" placeholder="duration" />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputprice" class="form-label">Price</label>
+                    <input type="text" name="price" [(ngModel)]="membershipsubscription.price" id="form2Example1"
+                      class="form-control" placeholder="price" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputdescription" class="form-label">Description</label>
+                    <input type="text" name="description" [(ngModel)]="membershipsubscription.description" id="form2Example1"
+                      class="form-control" placeholder="description" />
+                  </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+

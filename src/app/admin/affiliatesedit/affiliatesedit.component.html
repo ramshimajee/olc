@@ -1,0 +1,40 @@
+
+
+<div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Affiliates</h5>
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="submit()" enctype="multipart/form-data"> 
+              <div class="mb-3">
+                <label for="exampleInputaffiliatesname" class="form-label">Affiliates Name</label>
+                <input type="text" name="affiliatesname" [(ngModel)]="affiliates.affiliatesname"   id="form2Example1" class="form-control" placeholder="affiliatesname" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputaffiliateslink" class="form-label">Affiliates Link</label>
+                <input type="text" name="affiliateslink" [(ngModel)]="affiliates.affiliateslink"   id="form2Example1" class="form-control" placeholder="affiliateslink" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputdistrict" class="form-label">Choose Image</label>
+                <input type="file" name="image" (change)="onFileSelected($event)"    id="form2Example1" class="form-control"  />
+              </div>
+              <img src="http://127.0.0.1:8000{{image}}" alt="image" width="100" height="100">
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

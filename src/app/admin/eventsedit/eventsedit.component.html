@@ -1,0 +1,79 @@
+
+
+<div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Events</h5>
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="submit()" enctype="multipart/form-data"> 
+
+              <div class="mb-3">
+                <label for="exampleInputeventname" class="form-label">Event name</label>
+                <input type="text" name="eventname" [(ngModel)]="events.eventname"   id="form2Example1" class="form-control" placeholder="eventname" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventdate" class="form-label">Event date</label>
+                <input type="date" name="eventdate" [(ngModel)]="events.eventdate"   id="form2Example1" class="form-control" placeholder="eventdate" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventtime" class="form-label">Event time</label>
+                <input type="time" name="eventtime" [(ngModel)]="events.eventtime"   id="form2Example1" class="form-control" placeholder="eventtime" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleState" class="form-label">Choose State</label>
+                <select name="text" id="" name="stateid" [(ngModel)]="events.stateid" class="form-control"
+                  placeholder="statename" (change)="DropdownChange($event)">
+                  <option value="">-- Select State --</option>
+                  <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
+                </select>
+                <div class="select-dropdown"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleDistrict" class="form-label">Choose District</label>
+                <select name="text" id="" name="districtid" [(ngModel)]="events.districtid" class="form-control"
+                  placeholder="districtname">
+                  <option value="">-- Select District --</option>
+                  <option *ngFor="let data of district" [value]="data.districtid">{{data.districtname}}</option>
+                </select>
+                <div class="select-dropdown"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventplace" class="form-label">Event place</label>
+                <input type="text" name="eventplace" [(ngModel)]="events.eventplace"   id="form2Example1" class="form-control" placeholder="eventplace" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventeventdescription" class="form-label">Event description</label>
+                <input type="text" name="eventdescription" [(ngModel)]="events.eventdescription"   id="form2Example1" class="form-control" placeholder="eventdescription" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputeventbrochure" class="form-label">Choose Brochure</label>
+                <input type="file" name="eventbrochure" (change)="onFileSelected($event)"    id="form2Example1" class="form-control"  />
+              </div>
+              <img src="http://127.0.0.1:8000{{eventbrochure}}" alt="image" width="100" height="100">
+              <div class="mb-3">
+                <label for="examplestate" class="form-label">Event type</label>
+                <select name="text" id="" name="eventtype" [(ngModel)]="events.eventtype" class="form-control"
+                  placeholder="membershiptype">
+                  <option value="">-- Select eventtype --</option>
+                  <option *ngFor="let data of eventtype" [value]="data.id">{{data.eventtypename}}</option>
+                </select>
+                <div class="select-dropdown"></div>
+              </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

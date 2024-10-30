@@ -1,0 +1,50 @@
+ <!-- Page Header Start -->
+ <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-2.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Board</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Technicians</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h3 class="text-primary text-uppercase">2024 – 2025 Board Members </h3>
+            <p>Open Library Consortium (OLC) Board oversees the governance, organizational structure, by-laws, and the review and direction of the membership of the LPC. This group provides guidance on critical decisions, formalizes documentation, and ensures that projects make progress towards their goals. The Board is elected by LPC’s membership, and officers are elected by the Board.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let data of boarddata">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                        
+                        <img src="http://127.0.0.1:8000{{data.image}}" alt="image" width="300" height="200">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h5 class="fw-bold mb-0">{{data.firstname}} {{data.lastname}}</h5>
+                        <p style="margin-top: 3px;margin-bottom: 0rem;">{{data.designation}}</p>
+                        <p style="margin-top: auto; margin-bottom:0rem;" >{{data.affliation}} </p>
+                        <p>{{data.duration_from}} -{{data.duration_to}}</p>  
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
