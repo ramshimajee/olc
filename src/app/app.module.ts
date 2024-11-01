@@ -57,6 +57,7 @@ import { GeteventtypeComponent } from './guest/geteventtype/geteventtype.compone
 import { GeteventsComponent } from './guest/getevents/getevents.component';
 import { GetannualreportComponent } from './guest/getannualreport/getannualreport.component';
 import { PaymentComponent } from './guest/payment/payment.component';
+import { ExampleComponent } from './example/example.component';
 
 
 
@@ -115,7 +116,8 @@ import { PaymentComponent } from './guest/payment/payment.component';
           GeteventtypeComponent,
           GeteventsComponent,
           GetannualreportComponent,
-          PaymentComponent
+          PaymentComponent,
+          ExampleComponent
         
         
        
