@@ -29,7 +29,7 @@ import { AnnualreportviewComponent } from './admin/annualreportview/annualreport
 import { AnnualreporteditComponent } from './admin/annualreportedit/annualreportedit.component';
 import { SignupComponent } from './guest/signup/signup.component';
 import { SignupviewComponent } from './admin/signupview/signupview.component';
-import { SubscribeComponent } from './guest/subscribe/subscribe.component';
+// import { SubscribeComponent } from './guest/subscribe/subscribe.component';
 import { MembershiptypeComponent } from './admin/membershiptype/membershiptype.component';
 import { MembershiptypeviewComponent } from './admin/membershiptypeview/membershiptypeview.component';
 import { MembershiptypeeditComponent } from './admin/membershiptypeedit/membershiptypeedit.component';
@@ -106,8 +106,8 @@ const routes: Routes = [
   {path:"guestmaster",component:GuestmasterComponent,
     children:[
       {path:"guesthome",component:GuesthomeComponent},
-      {path:"signup",component:SignupComponent},
-      {path:"subscribe/:id",component:SubscribeComponent},
+      {path:"signup/:id",component:SignupComponent},
+      // {path:"subscribe/:id",component:SubscribeComponent},
       {path:"getboardmembers",component:GetboardmembersComponent},
       {path:"getaffiliates",component:GetaffiliatesComponent},
       {path:"CodeofConduct",component:CodeofConductComponent},

@@ -25,9 +25,9 @@ export class GetmembershipsubscriptionComponent {
       this.membershipsubscription=response;
     });
   }
-  subscribe(id:any){
+  signup(id:any){
     console.log(id)
-    this.router.navigate(['guestmaster/subscribe',id] )
+    this.router.navigate(['guestmaster/signup',id] )
   }
 
 }

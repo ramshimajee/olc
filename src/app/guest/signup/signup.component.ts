@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
 
 @Component({
@@ -27,8 +28,13 @@ export class SignupComponent implements OnInit {
   stateid: any;                               
   district: any;
   affiliation: any;
+  signupdata: any;
  
-constructor(private service:ServiceService){}
+  constructor(private service:ServiceService,private router: Router,private route: ActivatedRoute){
+    this.route.paramMap.subscribe((params:ParamMap) =>{
+      this.signupdata = params.get('id');
+    });
+  }
 ngOnInit(): void {
   this.getStateData();
   this.getAffliationData();

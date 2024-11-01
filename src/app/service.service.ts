@@ -191,6 +191,9 @@ export class ServiceService {
   updateeventtype(data: any, formData: FormData){
     return this.http.post(`${this.baseUrl}update_eventtype/${data}`,formData);
   }
+  addpayment(formData:FormData):Observable<any> {
+    return this.http.post(`${this.baseUrl}addpayment`,formData);
+  }
   getpayment(data:number){
     return this.http.get(`${this.baseUrl}getpayment/${data}`);
 

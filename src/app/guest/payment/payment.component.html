@@ -40,6 +40,7 @@
 					<div class="col-md-7 col-sm-12 p-0 box">
 						<div class="card rounded-0 border-0 card2" id="paypage">
 							<div class="form-card">
+							<form (ngSubmit)="submit()">
 			                    <h2 id="heading2" class="text-danger">Payment Method</h2>
 			                    <div class="radio-group">
 			                        <div class='radio' data-value="credit"><img src="https://i.imgur.com/28akQFX.jpg" width="200px" height="60px"></div>
@@ -47,15 +48,15 @@
 			                        <br>
 			                    </div>
 			                    <label class="pay">Name on Card</label>
-			                    <input type="text" name="holdername" placeholder="John Smith">
+			                    <input type="text" name="holdername"  [(ngModel)]="payment.holdername" placeholder="holdername">
 			                    <div class="row">
 			                        <div class="col-8 col-md-6">
 			                            <label class="pay">Card Number</label>
-			                            <input type="text" name="cardno" id="cr_no" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
+			                            <input type="number" name="cardno" id="cr_no"[(ngModel)]="payment.cardno" placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
 			                        </div>
 			                        <div class="col-4 col-md-6">
 			                            <label class="pay">CVV</label>
-			                            <input type="password" name="cvcpwd" placeholder="&#9679;&#9679;&#9679;" class="placeicon" minlength="3" maxlength="3">
+			                            <input type="password" name="cvc" [(ngModel)]="payment.cvc" placeholder="&#9679;&#9679;&#9679;" class="placeicon" minlength="3" maxlength="3">
 			                        </div>
 			                    </div>
 			                    <div class="row">
@@ -63,7 +64,7 @@
 			                            <label class="pay">Expiration Date</label>
 			                        </div>
 			                        <div class="col-md-12">
-			                            <input type="text" name="exp" id="exp" placeholder="MM/YY" minlength="5" maxlength="5">
+			                            <input type="date" name="expdate" id="expdate" [(ngModel)]="payment.expdate" placeholder="MM/YY" minlength="5" maxlength="5">
 			                        </div>
 			                    </div>
                                 
@@ -72,6 +73,7 @@
 			                            <input type="submit" value="MAKE A PAYMENT &nbsp; &#xf178;" class="btn btn-info placeicon">
 			                        </div>
 			                    </div>
+							</form>
 			                </div>
 						</div>
 					</div>
