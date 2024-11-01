@@ -56,6 +56,7 @@ import { PaymentComponent } from './guest/payment/payment.component';
 
 
 const routes: Routes = [
+  {path:'',redirectTo:'/guestmaster/guesthome', pathMatch:'full'},
   {path:"payment/:id",component:PaymentComponent},
   {path:"adminmaster",component:AdminmasterComponent,
     children:[

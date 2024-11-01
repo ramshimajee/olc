@@ -29,7 +29,7 @@ export class PaymentComponent implements OnInit {
 ngOnInit(): void {
   
   this.getPaymentData();
-  this.memberid=sessionStorage.getItem('id')
+  this.memberid=sessionStorage.getItem('memberID')
 
 }
 
@@ -63,7 +63,8 @@ submit(){
     console.log(response);
 
     alert('payment successfull');
-    location.reload();
+    sessionStorage.clear();
+    this.router.navigate([''])
     // this.router.navigate(['adminmaster/institutionview'])
     },);
 

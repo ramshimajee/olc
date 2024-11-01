@@ -19,8 +19,10 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+            
             <h3 class="text-primary text-uppercase">Membership Registration</h3>
-            <p>Register for OLC membership to enjoy exclusive benefits and access to resources.</p>
+            <p>Register for OLC membership to enjoy exclusive benefits and access to resources.</p><br>
+            <p>Choosen Subscription : <b>{{membershipname}}</b></p>
         </div>
         <div class="row g-5">
             <!-- Left Column: Terms and Conditions -->
@@ -117,8 +119,8 @@
                             <!-- ORCID Field -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" name="ORCID" [(ngModel)]="signup.ORCID" id="ORCID" class="form-control" placeholder="ORCID" />
-                                    <label for="ORCID">ORCID</label>
+                                    <input type="text" name="ORCID" [(ngModel)]="signup.ORCID" id="ORCID" class="form-control" placeholder="ORCID (Optional)" />
+                                    <label for="ORCID ">ORCID (Optional)</label>
                                 </div>
                             </div>
 

@@ -29,6 +29,8 @@ export class SignupComponent implements OnInit {
   district: any;
   affiliation: any;
   signupdata: any;
+  membershipname: any;
+  memberid: any;
  
   constructor(private service:ServiceService,private router: Router,private route: ActivatedRoute){
     this.route.paramMap.subscribe((params:ParamMap) =>{
@@ -38,7 +40,7 @@ export class SignupComponent implements OnInit {
 ngOnInit(): void {
   this.getStateData();
   this.getAffliationData();
-
+  this.getMembershipName();
 }
 getStateData(){
   this.service.getstates().subscribe((response: any)=>{
@@ -67,7 +69,12 @@ getAffliationData(){
 
 }
 
-
+getMembershipName(){
+  this.service.getmembershiptypeData(this.signupdata).subscribe((response:any)=>{
+    console.log(response.membershiptypename)
+    this.membershipname = response.membershiptypename
+  })
+}
 
 
 submit(){
@@ -89,19 +96,22 @@ submit(){
   console.log(formData)
   this.service.signup(formData).subscribe((response)=>{
     console.log(response);
-
-    alert('registration added');
-    location.reload();
-    // this.router.navigate(['adminmaster/eventsview'])
-  },
-  error => {
-    // Handle the case where the user already exists
-    if (error.status === 400 && error.error.message === "User Already Exist!") {
-      alert('User Already Exist!');
-    } else {
-      alert('An error occurred during registration.');
+    if (response.success===true){
+      alert('Procced To Payment Page');
+      this.memberid = response.id
+      sessionStorage.setItem('memberID',this.memberid)
+      this.router.navigate(['payment',this.signupdata])
     }
-  }
+    else if (response.success===false){
+      alert("User Already Exists")
+    }
+    else{
+      alert("Unknow Error Ocuured")
+    }
+    
+    
+  },
+  
 );
 
  
