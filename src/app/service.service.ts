@@ -11,7 +11,12 @@ export class ServiceService {
  
 
   constructor(private http:HttpClient) { }
-
+  getcountry(){
+    return this.http.get(`${this.baseUrl}country`);
+  }
+  state(formData:FormData):Observable<any> {
+    return this.http.post(`${this.baseUrl}state`,formData);
+  }
   getstates(){
     return this.http.get(`${this.baseUrl}state`);
   }
