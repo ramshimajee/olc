@@ -20,6 +20,16 @@ export class ServiceService {
   getstates(){
     return this.http.get(`${this.baseUrl}state`);
   }
+  deletestate(data:number):Observable<any>{
+    return this.http.delete(`${this.baseUrl}state/${data}`)
+  }
+  getstateData(data:number){
+    console.log(data);
+    return this.http.get(`${this.baseUrl}update_state/${data}`)
+  }
+  updatestate(data: any, formData: FormData){
+    return this.http.post(`${this.baseUrl}update_state/${data}`,formData);
+  }
   district(formData:FormData):Observable<any> {
     return this.http.post(`${this.baseUrl}district`,formData);
   }

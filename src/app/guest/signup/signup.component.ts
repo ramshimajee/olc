@@ -9,15 +9,11 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class SignupComponent implements OnInit {
   signup={
-    displayname:'',
+    countryid:'',
     stateid:'',
     districtid:'',
-    firstname:'',
-    lastname:'',
+    institution:'',
     affiliation:'',
-    Linkedln:'',
-    biography:'',
-    ORCID:'',
     registereddate:'',
     email:'',
     password:'',
@@ -31,6 +27,8 @@ export class SignupComponent implements OnInit {
   signupdata: any;
   membershipname: any;
   memberid: any;
+  institution: any;
+  country: any[]=[];
  
   constructor(private service:ServiceService,private router: Router,private route: ActivatedRoute){
     this.route.paramMap.subscribe((params:ParamMap) =>{
@@ -38,9 +36,19 @@ export class SignupComponent implements OnInit {
     });
   }
 ngOnInit(): void {
+  this.getCountryData();
   this.getStateData();
+  this.getInstitutionData();
   this.getAffliationData();
   this.getMembershipName();
+}
+getCountryData(){
+  this.service.getcountry().subscribe((response: any)=>{
+  this.country = response;
+  console.log(this.country)
+  });
+  
+
 }
 getStateData(){
   this.service.getstates().subscribe((response: any)=>{
@@ -57,6 +65,13 @@ DropdownChange(event: any) {
   this.district =response
   console.log(this.district)
   
+  });
+}
+getInstitutionData() {
+  this.service.getinstitution().subscribe((response:any)=>
+  {
+    console.log(response);
+    this.institution=response;
   });
 }
 getAffliationData(){
@@ -79,15 +94,11 @@ getMembershipName(){
 
 submit(){
   const formData=new FormData();
-  formData.append('displayname',this.signup.displayname)
+  formData.append('countryid',this.signup.countryid)
   formData.append('stateid',this.signup.stateid)
   formData.append('districtid',this.signup.districtid)
-  formData.append('firstname',this.signup.firstname)
-  formData.append('lastname',this.signup.lastname)
+  formData.append('institution',this.signup.institution)
   formData.append('affiliation',this.signup.affiliation)
-  formData.append('Linkedln',this.signup.Linkedln)
-  formData.append('biography',this.signup.biography)
-  formData.append('ORCID',this.signup.ORCID)
   formData.append('registereddate',this.signup.registereddate)
   formData.append('email',this.signup.email)
   formData.append('password',this.signup.password)

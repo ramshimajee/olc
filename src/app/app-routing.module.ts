@@ -52,6 +52,7 @@ import { GeteventsComponent } from './guest/getevents/getevents.component';
 import { GetannualreportComponent } from './guest/getannualreport/getannualreport.component';
 import { PaymentComponent } from './guest/payment/payment.component';
 import { StateComponent } from './admin/state/state.component';
+import { StateviewComponent } from './admin/stateview/stateview.component';
 
 
 
@@ -63,6 +64,7 @@ const routes: Routes = [
     children:[
       {path:"adminhome",component:AdminhomeComponent},
       {path:"state",component:StateComponent},
+      {path:"stateview",component:StateviewComponent},
       {path:"district",component:DistrictComponent},
       {path:"districtview",component:DistrictviewComponent},
       {path:"districtedit/:id",component:DistricteditComponent},

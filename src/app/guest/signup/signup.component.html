@@ -44,10 +44,14 @@
                     <form (ngSubmit)="submit()">
                         <div class="row g-3">
                             <!-- Display Name Field -->
+                           
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" name="displayname" [(ngModel)]="signup.displayname" id="displayname" class="form-control" placeholder="Display Name" />
-                                    <label for="displayname">Display Name</label>
+                                    <select name="countryid" [(ngModel)]="signup.countryid" class="form-control" (change)="DropdownChange($event)">
+                                        <option value="">-- Select Country --</option>
+                                        <option *ngFor="let data of country" [value]="data.countryid">{{data.countryname}}</option>
+                                    </select>
+                                    <label for="stateid">Country</label>
                                 </div>
                             </div>
 
@@ -73,19 +77,14 @@
                                 </div>
                             </div>
 
-                            <!-- First Name Field -->
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" name="firstname" [(ngModel)]="signup.firstname" id="firstname" class="form-control" placeholder="First Name" />
-                                    <label for="firstname">First Name</label>
-                                </div>
-                            </div>
 
-                            <!-- Last Name Field -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" name="lastname" [(ngModel)]="signup.lastname" id="lastname" class="form-control" placeholder="Last Name" />
-                                    <label for="lastname">Last Name</label>
+                                    <select name="institution" [(ngModel)]="signup.institution" class="form-control">
+                                        <option value="">-- Choose Institution --</option>
+                                        <option *ngFor="let data of institution" [value]="data.id">{{data.institutionname}}</option>
+                                    </select>
+                                    <label for="institution">Institution</label>
                                 </div>
                             </div>
 
@@ -97,30 +96,6 @@
                                         <option *ngFor="let data of affiliation" [value]="data.id">{{data.affiliatesname}}</option>
                                     </select>
                                     <label for="affiliation">Affiliation</label>
-                                </div>
-                            </div>
-
-                            <!-- LinkedIn Field -->
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" name="LinkedIn" [(ngModel)]="signup.Linkedln" id="form2Exa" class="form-control" placeholder="" />
-                                    <label for="LinkedIn">LinkedIn </label>
-                                </div>
-                            </div>
-
-                            <!-- Biography Field -->
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea name="biography" [(ngModel)]="signup.biography" class="form-control" id="biography" placeholder="Biography"></textarea>
-                                    <label for="biography">Biography</label>
-                                </div>
-                            </div>
-
-                            <!-- ORCID Field -->
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" name="ORCID" [(ngModel)]="signup.ORCID" id="ORCID" class="form-control" placeholder="ORCID (Optional)" />
-                                    <label for="ORCID ">ORCID (Optional)</label>
                                 </div>
                             </div>
 

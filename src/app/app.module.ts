@@ -59,6 +59,8 @@ import { GetannualreportComponent } from './guest/getannualreport/getannualrepor
 import { PaymentComponent } from './guest/payment/payment.component';
 import { ExampleComponent } from './example/example.component';
 import { StateComponent } from './admin/state/state.component';
+import { StateviewComponent } from './admin/stateview/stateview.component';
+import { StateeditComponent } from './admin/stateedit/stateedit.component';
 
 
 
@@ -119,7 +121,9 @@ import { StateComponent } from './admin/state/state.component';
           GetannualreportComponent,
           PaymentComponent,
           ExampleComponent,
-          StateComponent
+          StateComponent,
+          StateviewComponent,
+          StateeditComponent
         
         
        

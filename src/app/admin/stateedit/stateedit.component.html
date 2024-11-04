@@ -1,0 +1,38 @@
+
+
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">STATE</h5>
+          <div class="card">
+            <div class="card-body">
+              <form (ngSubmit)="submit()">
+  
+                <div class="mb-3">
+                  <label for="examplestate" class="form-label">Choose Country</label>
+                  <select name="text" id="" name="countryid" [(ngModel)]="state.countryid" class="form-control"
+                    placeholder="countryname">
+                    <option value="">-- Select Country --</option>
+                    <option *ngFor="let data of country" [value]="data.countryid">{{data.countryname}}</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputdistrict" class="form-label">Enter State</label>
+                  <input type="text" name="statename" [(ngModel)]="state.statename" id="form2Example1"
+                    class="form-control" placeholder="state" />
+                </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
