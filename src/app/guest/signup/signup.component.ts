@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
     stateid:'',
     districtid:'',
     institution:'',
-    affiliation:'',
+    libraryname:'',
     registereddate:'',
     email:'',
     password:'',
@@ -39,7 +39,6 @@ ngOnInit(): void {
   this.getCountryData();
   this.getStateData();
   this.getInstitutionData();
-  this.getAffliationData();
   this.getMembershipName();
 }
 getCountryData(){
@@ -74,15 +73,6 @@ getInstitutionData() {
     this.institution=response;
   });
 }
-getAffliationData(){
-  this.service.getaffiliates().subscribe((resultData: any)=>
-  {
-  console.log(resultData);
-  this.affiliation = resultData;
-  });
-  
-
-}
 
 getMembershipName(){
   this.service.getmembershiptypeData(this.signupdata).subscribe((response:any)=>{
@@ -98,7 +88,7 @@ submit(){
   formData.append('stateid',this.signup.stateid)
   formData.append('districtid',this.signup.districtid)
   formData.append('institution',this.signup.institution)
-  formData.append('affiliation',this.signup.affiliation)
+  formData.append('libraryname',this.signup.libraryname)
   formData.append('registereddate',this.signup.registereddate)
   formData.append('email',this.signup.email)
   formData.append('password',this.signup.password)

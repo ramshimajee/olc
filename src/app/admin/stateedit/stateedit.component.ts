@@ -33,9 +33,10 @@ export class StateeditComponent implements OnInit {
     console.log(this.data);
     this.service.getstateData(this.data).subscribe(response=>{
       this.statedata=response
+      console.log(this.statedata)
       // console.log(this.districtdata.state.stateid)
       this.state={
-        countryid:this.statedata.state.countryid ,
+        countryid:this.statedata.country.countryid ,
         statename:this.statedata.statename
       };  
     });

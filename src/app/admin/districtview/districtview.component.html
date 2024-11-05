@@ -19,13 +19,16 @@
                   <h6 class="fw-semibold mb-0">slno</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">  state</h6>
+                  <h6 class="fw-semibold mb-0">Country</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">  districtname</h6>
+                  <h6 class="fw-semibold mb-0">State</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">  Action</h6>
+                  <h6 class="fw-semibold mb-0">Districtname</h6>
+                </th>
+                <th class="border-bottom-0">
+                  <h6 class="fw-semibold mb-0">Action</h6>
                 </th>
               </tr>
             </thead>
@@ -37,6 +40,10 @@
                   {{i + 1}}
                     <h6 class="fw-semibold mb-1"></h6>                              
                 </td>
+                <td class="border-bottom-0">
+                  {{data.country.countryname}}
+                  <p class="mb-0 fw-normal"></p>
+                </td>  
 
                 <td class="border-bottom-0">
                   {{data.state.statename}}

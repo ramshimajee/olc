@@ -12,30 +12,46 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class DistrictComponent implements OnInit {
   district={
+    countryid:'',
     stateid:'',
     districtname:''
     
     
   }  
   state: any[]=[];
+  country: any;
+  countryid: any;
+  statebycountry: any;
   
   constructor(private service:ServiceService, private router:Router){}
 
   ngOnInit(): void {
-    this.getStateData();
+    
+    this.getCountryData()
 
   }
-  getStateData(){
-    this.service.getstates().subscribe((response: any)=>{
-    this.state = response;
+  getCountryData(){
+    this.service.getcountry().subscribe((response: any)=>{
+    this.country = response;
     console.log(this.state)
     });
     
 
   }
 
+  DropdownChange(event: any) {
+    this.countryid=this.district.countryid;
+    console.log(this.countryid)
+    this.service.getstatebycountry(this.countryid).subscribe(response =>{
+    this.statebycountry =response
+    console.log(this.statebycountry)
+    
+    });
+  }
+
   submit(){
     const formData=new FormData();
+    formData.append('countryid',this.district.countryid)
     formData.append('stateid',this.district.stateid)
     formData.append('districtname',this.district.districtname)
     

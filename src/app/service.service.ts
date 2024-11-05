@@ -27,6 +27,9 @@ export class ServiceService {
     console.log(data);
     return this.http.get(`${this.baseUrl}update_state/${data}`)
   }
+  getstatebycountry(data:number){
+    return this.http.get(`${this.baseUrl}getstatebycountry/${data}`);
+  }
   updatestate(data: any, formData: FormData){
     return this.http.post(`${this.baseUrl}update_state/${data}`,formData);
   }

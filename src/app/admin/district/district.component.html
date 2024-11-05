@@ -10,11 +10,20 @@
             <form (ngSubmit)="submit()">
 
               <div class="mb-3">
+                <label for="examplestate" class="form-label">Choose Country</label>
+                <select name="text" id="" name="countryid" [(ngModel)]="district.countryid" class="form-control"
+                  placeholder="countryname" (change)="DropdownChange($event)">
+                  <option value="">-- Select Country --</option>
+                  <option *ngFor="let data of country" [value]="data.countryid">{{data.countryname}}</option>
+                </select>
+                <div class="select-dropdown"></div>
+              </div>
+              <div class="mb-3">
                 <label for="examplestate" class="form-label">Choose State</label>
                 <select name="text" id="" name="stateid" [(ngModel)]="district.stateid" class="form-control"
                   placeholder="Statenamename">
                   <option value="">-- Select State --</option>
-                  <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
+                  <option *ngFor="let data of statebycountry" [value]="data.stateid">{{data.statename}}</option>
                 </select>
                 <div class="select-dropdown"></div>
               </div>

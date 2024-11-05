@@ -10,6 +10,7 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class DistricteditComponent implements OnInit {
   district={
+    countryid:'',
     stateid:'',
     districtname:''
     
@@ -18,6 +19,9 @@ export class DistricteditComponent implements OnInit {
   state: any[]=[];
   data: any;
   districtdata: any;
+  country: any;
+  countryid: any;
+  statebycountry: any;
   
   
   constructor(private service:ServiceService,private router: Router, private route:ActivatedRoute,private http:HttpClient){
@@ -30,18 +34,27 @@ export class DistricteditComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStateData();
+    this.getCountryData();
     console.log(this.data);
     this.service.getdistrictData(this.data).subscribe(response=>{
       this.districtdata=response
       // console.log(this.districtdata.state.stateid)
       this.district={
+        countryid:this.districtdata.country.countryid ,
         stateid:this.districtdata.state.stateid ,
         districtname:this.districtdata.districtname
       };  
     });
 
   }
- 
+  getCountryData(){
+    this.service.getcountry().subscribe((response: any)=>{
+    this.country = response;
+    console.log(this.state)
+    });
+    
+
+  }
   
   getStateData(){
     this.service.getstates().subscribe((response: any)=>{
@@ -51,9 +64,21 @@ export class DistricteditComponent implements OnInit {
     
 
   }
+  DropdownChange(event: any) {
+    this.countryid=this.district.countryid;
+    console.log(this.countryid)
+    this.service.getstatebycountry(this.countryid).subscribe(response =>{
+    this.statebycountry =response
+    console.log(this.statebycountry)
+    
+    });
+  }
+
+ 
 
   submit(){
     const formData=new FormData();
+    formData.append('countryid',this.district.countryid)
     formData.append('stateid',this.district.stateid)
     formData.append('districtname',this.district.districtname)
     console.log(formData) 

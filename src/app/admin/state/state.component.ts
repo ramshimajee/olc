@@ -42,7 +42,7 @@ export class StateComponent implements OnInit{
       console.log(response);
       alert('State added');
       location.reload();
-      // this.router.navigate(['adminmaster/districtview'])
+      this.router.navigate(['adminmaster/stateview'])
     },);
 
 

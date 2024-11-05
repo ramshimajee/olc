@@ -91,11 +91,8 @@
                             <!-- Affiliation Dropdown -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <select name="affiliation" [(ngModel)]="signup.affiliation" class="form-control">
-                                        <option value="">-- Choose Affiliation --</option>
-                                        <option *ngFor="let data of affiliation" [value]="data.id">{{data.affiliatesname}}</option>
-                                    </select>
-                                    <label for="affiliation">Affiliation</label>
+                                    <input type="libraryname" name="libraryname" [(ngModel)]="signup.libraryname" id="libraryname" class="form-control" placeholder="libraryname" />
+                                    <label for="libraryname">Library name</label>
                                 </div>
                             </div>
 

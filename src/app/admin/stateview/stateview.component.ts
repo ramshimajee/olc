@@ -35,7 +35,7 @@ export class StateviewComponent implements OnInit {
       });
   }
   edit(id:any){
-    this.router.navigate(['adminmaster/statedit',id] )
+    this.router.navigate(['adminmaster/stateedit',id] )
   }
 
 
