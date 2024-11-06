@@ -212,7 +212,7 @@ ol {
 	0% {
 		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
-		border: 4px solid #f44336;
+		border: 4px solid #F36760;
 		border-left-color: transparent;
 	}
 	50% {
@@ -224,7 +224,7 @@ ol {
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
-		border: 4px solid #f44336;
+		border: 4px solid #F36760;
 		border-left-color: transparent;
 	}
 }
@@ -232,7 +232,7 @@ ol {
 @-webkit-keyframes loader {
 	0% {
 		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
+		border: 4px solid #F36760;
 		border-left-color: transparent;
 	}
 	50% {
@@ -242,7 +242,7 @@ ol {
 	}
 	100% {
 		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
+		border: 4px solid #F36760;
 		border-left-color: transparent;
 	}
 }
