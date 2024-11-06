@@ -13,7 +13,7 @@
                             <h6 class="fw-semibold mb-0">slno</h6>
                         </th>
                         <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Display Name</h6>
+                            <h6 class="fw-semibold mb-0">Country</h6>
                         </th>
                         <th class="border-bottom-0">
                             <h6 class="fw-semibold mb-0">State</h6>
@@ -22,22 +22,10 @@
                             <h6 class="fw-semibold mb-0">District</h6>
                         </th>
                         <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Firstname</h6>
+                            <h6 class="fw-semibold mb-0">Institution</h6>
                         </th>
                         <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Lastname</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0">Affiliation</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0"> Linkedln</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0"> Biography</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                            <h6 class="fw-semibold mb-0"> ORCID</h6>
+                            <h6 class="fw-semibold mb-0"> Library Name</h6>
                         </th>
                         <th class="border-bottom-0">
                             <h6 class="fw-semibold mb-0"> Registered date</h6>
@@ -63,7 +51,7 @@
                         </td>
 
                         <td class="border-bottom-0">
-                            {{data.displayname}}
+                            {{data.country.countryname}}
                             <p class="mb-0 fw-normal"></p>
                         </td>
                         <td class="border-bottom-0">
@@ -75,30 +63,13 @@
                             {{data.district.districtname}}
                             <p class="mb-0 fw-normal"></p>
                         </td>
-
                         <td class="border-bottom-0">
-                            {{data.firstname}}
-                            <p class="mb-0 fw-normal"></p>
-                        </td>
-                        <td class="border-bottom-0">
-                            {{data.lastname}}
-                            <p class="mb-0 fw-normal"></p>
-                        </td>
-                        <td class="border-bottom-0">
-                            {{data.affiliation.affiliatesname}}
+                            {{data.institution.institutionname}}
                             <p class="mb-0 fw-normal"></p>
                         </td>
 
                         <td class="border-bottom-0">
-                            {{data.Linkedln}}
-                            <p class="mb-0 fw-normal"></p>
-                        </td>
-                        <td class="border-bottom-0">
-                            {{data.biography}}
-                            <p class="mb-0 fw-normal"></p>
-                        </td>
-                        <td class="border-bottom-0">
-                            {{data.ORCID}}
+                            {{data.libraryname}}
                             <p class="mb-0 fw-normal"></p>
                         </td>
                         <td class="border-bottom-0">

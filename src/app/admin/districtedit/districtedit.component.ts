@@ -40,8 +40,8 @@ export class DistricteditComponent implements OnInit {
       this.districtdata=response
       // console.log(this.districtdata.state.stateid)
       this.district={
-        countryid:this.districtdata.country.countryid ,
-        stateid:this.districtdata.state.stateid ,
+        countryid:this.districtdata.country.countryid,
+        stateid:this.districtdata.state.stateid,
         districtname:this.districtdata.districtname
       };  
     });
@@ -50,7 +50,7 @@ export class DistricteditComponent implements OnInit {
   getCountryData(){
     this.service.getcountry().subscribe((response: any)=>{
     this.country = response;
-    console.log(this.state)
+    console.log(this.country)
     });
     
 

@@ -23,7 +23,7 @@
                 <select name="text" id="" name="stateid" [(ngModel)]="district.stateid" class="form-control"
                   placeholder="Statenamename">
                   <option value="">-- Select State --</option>
-                  <option *ngFor="let data of statebycountry" [value]="data.stateid">{{data.statename}}</option>
+                  <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
                 </select>
                 <div class="select-dropdown"></div>
               </div>

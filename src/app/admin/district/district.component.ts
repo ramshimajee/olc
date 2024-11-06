@@ -33,7 +33,7 @@ export class DistrictComponent implements OnInit {
   getCountryData(){
     this.service.getcountry().subscribe((response: any)=>{
     this.country = response;
-    console.log(this.state)
+    console.log(this.country)
     });
     
 
