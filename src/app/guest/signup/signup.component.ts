@@ -29,6 +29,8 @@ export class SignupComponent implements OnInit {
   memberid: any;
   institution: any;
   country: any[]=[];
+  countryid: any;
+  districtid: any;
  
   constructor(private service:ServiceService,private router: Router,private route: ActivatedRoute){
     this.route.paramMap.subscribe((params:ParamMap) =>{
@@ -37,8 +39,7 @@ export class SignupComponent implements OnInit {
   }
 ngOnInit(): void {
   this.getCountryData();
-  this.getStateData();
-  this.getInstitutionData();
+  
   this.getMembershipName();
 }
 getCountryData(){
@@ -49,30 +50,30 @@ getCountryData(){
   
 
 }
-getStateData(){
-  this.service.getstates().subscribe((response: any)=>{
-  this.state = response;
-  console.log(this.state)
-  });
-  
 
+DropdownChangeState (event: any) {
+  this.countryid = this.signup.countryid
+  this.service.getstatebycountry(this.countryid).subscribe((response:any)=>{
+    this.state = response
+  })
 }
-DropdownChange(event: any) {
+
+DropdownChangeDistrict (event:any){
   this.stateid=this.signup.stateid;
   console.log(this.stateid)
   this.service.getdistrictbyid(this.stateid).subscribe(response =>{
-  this.district =response
+  this.district = response
   console.log(this.district)
   
   });
 }
-getInstitutionData() {
-  this.service.getinstitution().subscribe((response:any)=>
-  {
-    console.log(response);
-    this.institution=response;
-  });
+DropDownChangeInstitute(event:any){
+  this.districtid = this.signup.districtid
+  this.service.getinstitutionbyDistrict(this.districtid).subscribe((response:any)=>{
+    this.institution = response
+  })
 }
+
 
 getMembershipName(){
   this.service.getmembershiptypeData(this.signupdata).subscribe((response:any)=>{

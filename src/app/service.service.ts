@@ -216,6 +216,9 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}getpayment/${data}`);
 
   }
+  getinstitutionbyDistrict(data:number){
+    return this.http.get(`${this.baseUrl}getinstitutionbyDistrict/${data}`)
+  }
  
   
 }

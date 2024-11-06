@@ -25,6 +25,9 @@
                   <h6 class="fw-semibold mb-0">Institution link</h6>
                 </th>
                 <th class="border-bottom-0">
+                  <h6 class="fw-semibold mb-0">Institution Location</h6>
+                </th>
+                <th class="border-bottom-0">
                   <h6 class="fw-semibold mb-0">  Action</h6>
                 </th>
               </tr>
@@ -45,6 +48,10 @@
 
                 <td class="border-bottom-0">
                   {{data.institutionlink}}
+                  <p class="mb-0 fw-normal"></p>
+                </td> 
+                <td class="border-bottom-0">
+                  {{data.districts.districtname}} , {{data.state.statename}} , {{data.countrys.countryname}}
                   <p class="mb-0 fw-normal"></p>
                 </td> 
                 <td>

@@ -18,7 +18,36 @@
                     <label for="exampleInputbiolink" class="form-label">Institution link</label>
                     <input type="text" name="institutionlink" [(ngModel)]="institution.institutionlink" id="form2Example1"
                       class="form-control" placeholder="biolink" />
-                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="examplestate" class="form-label">Choose Country</label>
+                  <select name="text" id="" name="countryid" [(ngModel)]="institution.countryid" class="form-control"
+                    placeholder="countryname" (change)="DropdownChangeState($event)">
+                    <option value="">-- Select Country --</option>
+                    <option *ngFor="let data of country" [value]="data.countryid">{{data.countryname}}</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="examplestate" class="form-label">Choose State</label>
+                  <select name="text" id="" name="countryid" [(ngModel)]="institution.stateid" class="form-control"
+                    placeholder="countryname" (change)="DropdownChangeDistrict($event)">
+                    <option value="">-- Select State --</option>
+                    <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="examplestate" class="form-label">Choose District</label>
+                  <select name="text" id="" name="countryid" [(ngModel)]="institution.districtid" class="form-control"
+                    placeholder="countryname" (change)="DropdownChangeDistrict($event)">
+                    <option value="">-- Select District --</option>
+                    <option *ngFor="let data of district" [value]="data.districtid">{{data.districtname}}</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+
+                
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>

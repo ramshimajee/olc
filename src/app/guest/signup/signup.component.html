@@ -47,7 +47,7 @@
                            
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <select name="countryid" [(ngModel)]="signup.countryid" class="form-control" (change)="DropdownChange($event)">
+                                    <select name="countryid" [(ngModel)]="signup.countryid" class="form-control" (change)="DropdownChangeState($event)">
                                         <option value="">-- Select Country --</option>
                                         <option *ngFor="let data of country" [value]="data.countryid">{{data.countryname}}</option>
                                     </select>
@@ -58,7 +58,7 @@
                             <!-- State Dropdown -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <select name="stateid" [(ngModel)]="signup.stateid" class="form-control" (change)="DropdownChange($event)">
+                                    <select name="stateid" [(ngModel)]="signup.stateid" class="form-control" (change)="DropdownChangeDistrict($event)">
                                         <option value="">-- Select State --</option>
                                         <option *ngFor="let data of state" [value]="data.stateid">{{data.statename}}</option>
                                     </select>
@@ -69,7 +69,7 @@
                             <!-- District Dropdown -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <select name="districtid" [(ngModel)]="signup.districtid" class="form-control">
+                                    <select name="districtid" [(ngModel)]="signup.districtid" class="form-control" (change)="DropDownChangeInstitute($event)">
                                         <option value="">-- Select District --</option>
                                         <option *ngFor="let data of district" [value]="data.districtid">{{data.districtname}}</option>
                                     </select>
