@@ -102,6 +102,8 @@ submit(){
       alert('Procced To Payment Page');
       this.memberid = response.id
       sessionStorage.setItem('memberID',this.memberid)
+      sessionStorage.setItem('email',this.signup.email)
+ 
       this.router.navigate(['payment',this.signupdata])
     }
     else if (response.success===false){

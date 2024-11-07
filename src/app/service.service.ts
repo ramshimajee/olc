@@ -219,6 +219,9 @@ export class ServiceService {
   getinstitutionbyDistrict(data:number){
     return this.http.get(`${this.baseUrl}getinstitutionbyDistrict/${data}`)
   }
+  sendemail(emailForm:FormData){
+    return this.http.post(`${this.baseUrl}sendemail`,emailForm)
+  }
  
   
 }

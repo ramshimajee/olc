@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
   membershipname: any;
   price: any;
   memberid: any;
+  email: any;
  
   constructor(private service:ServiceService,private router: Router,private route: ActivatedRoute){
     this.route.paramMap.subscribe((params:ParamMap) =>{
@@ -30,7 +31,7 @@ ngOnInit(): void {
   
   this.getPaymentData();
   this.memberid=sessionStorage.getItem('memberID')
-
+  this.email = sessionStorage.getItem('email')
 }
 
 
@@ -61,14 +62,25 @@ submit(){
   console.log(formData)
   this.service.addpayment(formData).subscribe((response)=>{
     console.log(response);
-
+    this.emailfunction();
     alert('payment successfull');
+    
     sessionStorage.clear();
     this.router.navigate([''])
     // this.router.navigate(['adminmaster/institutionview'])
     },);
 
 
+  }
+
+  emailfunction(){
+    console.log(this.email)
+    const emailForm = new FormData
+    emailForm.append('email',this.email)
+    emailForm.append('membershipid',this.id)
+    this.service.sendemail(emailForm).subscribe((response:any)=>{
+
+    })
   }
 
 }
